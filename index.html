@@ -234,7 +234,7 @@
 
  
   .skill-groups{ display:flex; flex-wrap:wrap; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:20px; }
-  .skill-group{ flex:1 1 220px; background:var(--midnight); padding:30px 24px; transition:background 0.4s; }
+  .skill-group{ flex:1 1 175px; background:var(--midnight); padding:30px 24px; transition:background 0.4s; }
   .skill-group:hover{ background:rgba(23,15,40,0.6); }
   .skill-group h4{ font-family:'JetBrains Mono', monospace; font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--blue); margin-bottom:18px; }
   .skill-tags{ display:flex; flex-direction:column; gap:10px; }
@@ -242,6 +242,14 @@
   .skill-tag::before{ content:""; width:5px; height:5px; border-radius:50%; background:var(--muted-dim); transition:background 0.3s, box-shadow 0.3s; }
   .skill-tag:hover{ color:var(--violet); transform:translateX(4px); }
   .skill-tag:hover::before{ background:var(--violet); box-shadow:0 0 8px var(--violet); }
+
+  .experience-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:28px; }
+  .experience-card{ background:var(--midnight); padding:32px 28px; }
+  .experience-card h3{ font-family:'Outfit',sans-serif; font-size:1.2rem; margin-bottom:4px; }
+  .experience-card .org{ color:var(--violet); font-family:'JetBrains Mono',monospace; font-size:.82rem; }
+  .experience-card .date{ color:var(--muted-dim); font-family:'JetBrains Mono',monospace; font-size:.75rem; margin:10px 0; }
+  .experience-card p{ color:var(--muted); font-size:.94rem; }
+  @media (max-width:700px){ .experience-grid{ grid-template-columns:1fr; } }
 
  
   .project-featured{
@@ -387,6 +395,7 @@
     <li><a href="#hero" data-nav="hero">Home</a></li>
     <li><a href="#about" data-nav="about">About</a></li>
     <li><a href="#skills" data-nav="skills">Skills</a></li>
+    <li><a href="#experience" data-nav="experience">Experience</a></li>
     <li><a href="#projects" data-nav="projects">Projects</a></li>
     <li><a href="#journey" data-nav="journey">Journey</a></li>
     <li><a href="#certifications" data-nav="certifications">Certs</a></li>
@@ -485,14 +494,24 @@
         </div>
       </div>
       <div class="skill-group">
-        <h4>AI / Data</h4>
+        <h4>Data &amp; Analytics</h4>
+        <div class="skill-tags">
+          <div class="skill-tag">Data Analytics</div>
+          <div class="skill-tag">Predictive Analytics</div>
+          <div class="skill-tag">Data Management</div>
+          <div class="skill-tag">Data Visualization</div>
+          <div class="skill-tag">Microsoft Excel</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>AI &amp; Machine Learning</h4>
         <div class="skill-tags">
           <div class="skill-tag">Machine Learning</div>
-          <div class="skill-tag">Data Analysis</div>
           <div class="skill-tag">AI / LLMs</div>
           <div class="skill-tag">Prompt Engineering</div>
+          <div class="skill-tag">AI Prompting</div>
+          <div class="skill-tag">AI Productivity</div>
           <div class="skill-tag">Generative AI</div>
-          <div class="skill-tag">Data Visualization</div>
           <div class="skill-tag">Natural Language Processing</div>
         </div>
       </div>
@@ -503,7 +522,6 @@
           <div class="skill-tag">GitHub</div>
           <div class="skill-tag">VS Code</div>
           <div class="skill-tag">Streamlit</div>
-          <div class="skill-tag">Microsoft Excel</div>
         </div>
       </div>
       <div class="skill-group">
@@ -519,10 +537,32 @@
   </div>
 </section>
 
+<!-- EXPERIENCE -->
+<section id="experience" data-scene="3">
+  <div class="wrap">
+    <div class="eyebrow">03 · Experience</div>
+    <h2 class="sec-title reveal">Internships, <em>applied</em></h2>
+    <div class="experience-grid reveal">
+      <article class="experience-card">
+        <h3>Machine Learning Intern</h3>
+        <div class="org">Navodita Infotech · Remote</div>
+        <div class="date">Mar 2026 — Apr 2026</div>
+        <p>Built an NLP text-classification project using Python, NLTK, and spaCy while gaining hands-on experience with machine-learning concepts and models.</p>
+      </article>
+      <article class="experience-card">
+        <h3>Data Analytics Intern</h3>
+        <div class="org">BharatCares® · IBM SkillsBuild</div>
+        <div class="date">Aug 2026 — Present</div>
+        <p>Working through the IBM SkillsBuild Data Analytics with AI internship, building practical experience in data analytics, AI, machine learning, and data visualization.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- PROJECTS -->
 <section id="projects" data-scene="3">
   <div class="wrap">
-    <div class="eyebrow">03 · Quests Completed</div>
+    <div class="eyebrow">04 · Quests Completed</div>
     <h2 class="sec-title reveal">Projects, <em>shipped</em></h2>
     <p class="lede reveal">A featured build below, and a few slots kept open for what's next.</p>
 
@@ -534,7 +574,7 @@
 
 <section id="journey" data-scene="4">
   <div class="wrap">
-    <div class="eyebrow">04 · The Adventure</div>
+    <div class="eyebrow">05 · The Adventure</div>
     <h2 class="sec-title reveal">Milestones along the <em>way</em></h2>
     <p class="lede reveal">Tap a milestone to expand it.</p>
 
@@ -563,6 +603,12 @@
         <div class="t-detail"><p>Built a Windows-native voice assistant powered by Ollama (qwen2.5:14b) with tool-calling, Playwright browser control, faster-whisper speech-to-text, and pyttsx3 text-to-speech — plus a background wake-word listener that auto-starts it at boot.</p></div>
         <div class="t-toggle">+ expand</div>
       </div>
+      <div class="t-item" tabindex="0" role="button" aria-expanded="false">
+        <div class="t-head"><h4>Data Analytics Intern</h4><span class="t-date mono">Aug 2026 — Present</span></div>
+        <div class="t-org">BharatCares® · IBM SkillsBuild</div>
+        <div class="t-detail"><p>Selected for the IBM SkillsBuild Data Analytics with AI Internship 2026, gaining practical exposure to data analytics, machine learning, AI, and data visualization.</p></div>
+        <div class="t-toggle">+ expand</div>
+      </div>
     </div>
   </div>
 </section>
@@ -570,21 +616,51 @@
 
 <section id="certifications" data-scene="7">
   <div class="wrap">
-    <div class="eyebrow">05 · Artifacts</div>
+    <div class="eyebrow">06 · Artifacts</div>
     <h2 class="sec-title reveal">Certifications <em>collected</em></h2>
-    <p class="lede reveal">Real credentials, pulled in — no duplicate certificate types kept.</p>
+    <p class="lede reveal">Latest credentials and badges first, followed by earlier achievements.</p>
 
     <div class="cert-grid reveal">
       <div class="cert-card" onclick="this.classList.toggle('open')">
         <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
-        <h4>Data Visualization: Empowering Business with Insights</h4><div class="cert-detail"><div class="cert-org">Forage (Tata)</div>
-        <span class="cert-date mono">Sep 2025</span>
-        <div class="cert-skills"><span>Excel</span><span>Data Viz</span></div></div></div>
+        <h4>IBM SkillsBuild — Data Analytics with AI</h4><div class="cert-detail"><div class="cert-org">IBM SkillsBuild · AICTE · BharatCares®</div>
+        <span class="cert-date mono">Aug 2026</span>
+        <div class="cert-skills"><span>Data Analytics</span><span>AI</span><span>Data Visualization</span></div></div></div>
       <div class="cert-card" onclick="this.classList.toggle('open')">
         <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
-        <h4>Machine Learning Internship</h4><div class="cert-detail"><div class="cert-org">Navodita Infotech</div>
-        <span class="cert-date mono">Apr 2026</span>
-        <div class="cert-skills"><span>ML</span><span>NLP</span></div></div></div>
+        <h4>Generative AI Essentials: Using LLMs to Work with Data — Badge</h4><div class="cert-detail"><div class="cert-org">IBM SkillsBuild</div>
+        <span class="cert-date mono">Aug 2026</span>
+        <div class="cert-skills"><span>LLMs</span><span>AI</span></div></div></div>
+      <div class="cert-card" onclick="this.classList.toggle('open')">
+        <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
+        <h4>Data Fundamentals — Badge</h4><div class="cert-detail"><div class="cert-org">IBM SkillsBuild</div>
+        <span class="cert-date mono">Aug 2026</span>
+        <div class="cert-skills"><span>Data Analysis</span><span>Data Visualization</span></div></div></div>
+      <div class="cert-card" onclick="this.classList.toggle('open')">
+        <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
+        <h4>Python</h4><div class="cert-detail"><div class="cert-org">HackerRank</div>
+        <span class="cert-date mono">Aug 2026</span>
+        <div class="cert-skills"><span>Python</span></div></div></div>
+      <div class="cert-card" onclick="this.classList.toggle('open')">
+        <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
+        <h4>5-Day AI Agents: Intensive Vibe Coding Course</h4><div class="cert-detail"><div class="cert-org">Google</div>
+        <span class="cert-date mono">Jul 2026</span>
+        <div class="cert-skills"><span>AI</span><span>Prompt Engineering</span></div></div></div>
+      <div class="cert-card" onclick="this.classList.toggle('open')">
+        <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
+        <h4>Foundation Course on AI Readiness</h4><div class="cert-detail"><div class="cert-org">IICT · Google &amp; YouTube</div>
+        <span class="cert-date mono">Jul 2026</span>
+        <div class="cert-skills"><span>AI</span></div></div></div>
+      <div class="cert-card" onclick="this.classList.toggle('open')">
+        <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
+        <h4>QuizOff 2026 — India's Biggest AI Quiz</h4><div class="cert-detail"><div class="cert-org">CampusCrew / Unstop</div>
+        <span class="cert-date mono">Jul 2026</span>
+        <div class="cert-skills"><span>AI</span></div></div></div>
+      <div class="cert-card" onclick="this.classList.toggle('open')">
+        <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
+        <h4>NextGen Innovators Hackathon 2026</h4><div class="cert-detail"><div class="cert-org">Unstop / CampusCrew</div>
+        <span class="cert-date mono">2026</span>
+        <div class="cert-skills"><span>AI</span><span>Hackathon</span></div></div></div>
       <div class="cert-card" onclick="this.classList.toggle('open')">
         <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
         <h4>Google AI Essentials</h4><div class="cert-detail"><div class="cert-org">Google · Coursera</div>
@@ -597,29 +673,19 @@
         <div class="cert-skills"><span>Prompting</span></div></div></div>
       <div class="cert-card" onclick="this.classList.toggle('open')">
         <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
-        <h4>Forward</h4><div class="cert-detail"><div class="cert-org">McKinsey.org</div>
+        <h4>McKinsey Forward Badge</h4><div class="cert-detail"><div class="cert-org">McKinsey.org</div>
         <span class="cert-date mono">Jun 2026</span>
         <div class="cert-skills"><span>Problem-Solving</span></div></div></div>
       <div class="cert-card" onclick="this.classList.toggle('open')">
         <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
-        <h4>QuizOff 2026 — India's Biggest AI Quiz</h4><div class="cert-detail"><div class="cert-org">CampusCrew / Unstop</div>
-        <span class="cert-date mono">Jul 2026</span>
-        <div class="cert-skills"><span>AI</span></div></div></div>
+        <h4>Machine Learning Internship</h4><div class="cert-detail"><div class="cert-org">Navodita Infotech</div>
+        <span class="cert-date mono">Apr 2026</span>
+        <div class="cert-skills"><span>ML</span><span>NLP</span></div></div></div>
       <div class="cert-card" onclick="this.classList.toggle('open')">
         <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
-        <h4>Foundation Course on AI Readiness</h4><div class="cert-detail"><div class="cert-org">IICT · Google &amp; YouTube</div>
-        <span class="cert-date mono">Jul 2026</span>
-        <div class="cert-skills"><span>AI</span></div></div></div>
-      <div class="cert-card" onclick="this.classList.toggle('open')">
-        <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
-        <h4>NextGen Innovators Hackathon 2026</h4><div class="cert-detail"><div class="cert-org">Unstop / CampusCrew</div>
-        <span class="cert-date mono">2026</span>
-        <div class="cert-skills"><span>AI</span><span>Hackathon</span></div></div></div>
-      <div class="cert-card" onclick="this.classList.toggle('open')">
-        <svg class="cert-glow" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d4af37" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="#d4af37" stroke-width="1.2"/></svg>
-        <h4>Python</h4><div class="cert-detail"><div class="cert-org">HackerRank</div>
-        <span class="cert-date mono">Aug 2026</span>
-        <div class="cert-skills"><span>Python</span></div></div></div>
+        <h4>Data Visualization: Empowering Business with Insights</h4><div class="cert-detail"><div class="cert-org">Forage (Tata)</div>
+        <span class="cert-date mono">Sep 2025</span>
+        <div class="cert-skills"><span>Excel</span><span>Data Viz</span></div></div></div>
     </div>
   </div>
 </section>
@@ -627,7 +693,7 @@
 
 <section id="resume" data-scene="5">
   <div class="wrap">
-    <div class="eyebrow">06 · The Scroll</div>
+    <div class="eyebrow">07 · The Scroll</div>
     <h2 class="sec-title reveal">Take the <em>full record</em></h2>
     <div class="panel reveal">
       <div>
@@ -645,14 +711,14 @@
 
 <section id="contact" data-scene="6">
   <div class="wrap">
-    <div class="eyebrow">07 · Open a Connection</div>
+    <div class="eyebrow">08 · Open a Connection</div>
     <h2 class="sec-title reveal">Let's build <em>something</em></h2>
     <div class="grid">
       <div class="reveal">
         <p class="lede">Have an opportunity, project, or idea? Let's build something.</p>
         <div class="contact-links">
           <div class="contact-link"><span class="lbl mono">Email</span><a class="val" href="mailto:shivanshgh10@gmail.com">shivanshgh10@gmail.com</a></div>
-          <div class="contact-link"><span class="lbl mono">LinkedIn</span><svg width="16" height="16" viewBox="0 0 24 24" fill="#a79fc0"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg><a class="val" href="#" target="_blank" rel="noopener">linkedin.com/in/shivansh</a></div>
+          <div class="contact-link"><span class="lbl mono">LinkedIn</span><svg width="16" height="16" viewBox="0 0 24 24" fill="#a79fc0"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg><a class="val" href="https://www.linkedin.com/in/shivanshgh/" target="_blank" rel="noopener">linkedin.com/in/shivanshgh</a></div>
           <div class="contact-link"><span class="lbl mono">GitHub</span><svg width="16" height="16" viewBox="0 0 24 24" fill="#a79fc0"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.07.78 2.16 0 1.56-.02 2.82-.02 3.2 0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg><a class="val" href="https://github.com/Shivanshgh" target="_blank" rel="noopener">github.com/Shivanshgh</a></div>
           <div class="contact-link"><span class="lbl mono">Credly</span><a class="val" href="https://www.credly.com/users/shivanshgh" target="_blank" rel="noopener">credly.com/users/shivanshgh</a></div>
           <div class="contact-link"><span class="lbl mono">Skills</span><a class="val" href="https://www.skills.google/public_profiles/9e5b4a41-cd47-4d28-99ba-396a6d0d8a21" target="_blank" rel="noopener">Google Skills Profile</a></div>
